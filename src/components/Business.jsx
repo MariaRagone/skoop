@@ -36,9 +36,9 @@ function Business({
         {city}, {state} {zipcode}
       </p>
       <span>{category}</span>
-      <span>Rating:{rating}</span>
+      <span>Rating: {rating}</span>
 
-      <p>Number of Reviews:{reviewCount}</p>
+      <p># Reviews: {reviewCount}</p>
     </div>
   );
 }

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import BusinessList from "./components/BusinessList";
 import "./App.css";
+import Header from "./components/Header";
 import SearchBar from "./components/SearchBar";
 
 function App() {
@@ -55,7 +56,8 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Skoop List</h1>
+      <Header />
+      
       <SearchBar searchTerm={searchTerm} onSearchChange={setSearchTerm} />
       <BusinessList businesses={filteredBusinesses} />
     </div>
