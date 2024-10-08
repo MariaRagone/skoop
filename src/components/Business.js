@@ -14,21 +14,19 @@ const businessDetails = [
   },
 ];
 
-function Business() {
+function Business ({src, name, address, city, state, zipcode, category, rating, reviewCount}) {
   return (
-    <>
-      <img
-        src="https://content.codecademy.com/courses/React/react_photo-monkeyweirdo.jpg"
-        alt="The Big Cheese"
-      />
-      <h1>The Big Cheese</h1>
-      <p>Cheesy</p>
-      <p>12345 Cheese Way Cheesy, WI 48512 </p>
-      <p>Restaurant</p>
-      <p>Rating: 3</p>
-      <p>Number of Reviews: 30</p>
-    </>
+<div className="business">
+      <h2>{name}</h2>
+      <img src={src} alt={name} />
+      <p>{address}</p>
+      <p>{city}, {state} {zipcode}</p>
+      <span>{category}</span>
+      <span>Rating:{rating}</span>
+      
+      <p>Number of Reviews:{reviewCount}</p>
+    </div>
   );
-}
+};
 
 export default Business;
