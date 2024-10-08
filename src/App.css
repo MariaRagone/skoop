@@ -36,3 +36,46 @@
     transform: rotate(360deg);
   }
 }
+
+.business-list {
+  display: flex;
+  justify-content: space-between; 
+  flex-wrap: wrap; 
+  max-width: 1200px; 
+  margin: 0 auto; 
+}
+
+.business-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: #ffffff;
+  width: 200px; /* Width of each card */
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  margin: 16px; /* Margin around each card */
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.business-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.business-card img {
+  width: 200px;
+  border-radius: 5px;
+  height: auto;
+}
+
+.business-card h2 {
+  font-size: 1.5em;
+  margin: 8px 0;
+  color: #333;
+}
+
+.business-card p {
+  margin: 4px 0;
+  color: #666;
+}
