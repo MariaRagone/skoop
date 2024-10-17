@@ -6,6 +6,8 @@ import SearchBar from "./components/SearchBar";
 
 function App() {
   const [searchTerm, setSearchTerm] = useState("");
+  const [location, setLocation] = useState("Detroit");
+  const [sorting, setSorting] = useState("");
 
   const businesses = [
     {
@@ -50,6 +52,11 @@ function App() {
     },
   ];
 
+  const onSearchChange = ({ event }) => {
+    const { value } = target;
+    onChange={(e) => onSearchChange(e.target.value)}
+  
+  };
   const filteredBusinesses = businesses.filter((business) =>
     business.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
@@ -57,8 +64,12 @@ function App() {
   return (
     <div className="App">
       <Header />
-      
-      <SearchBar searchTerm={searchTerm} onSearchChange={setSearchTerm} />
+
+      <SearchBar
+        searchTerm={searchTerm}
+        location={setLocation}
+        onSearchChange={setSearchTerm}
+      />
       <BusinessList businesses={filteredBusinesses} />
     </div>
   );
