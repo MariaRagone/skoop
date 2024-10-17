@@ -8,7 +8,7 @@ function SearchBar({ searchTerm, location, sorting, onSearchChange }) {
   return (
     <>
       <div className="search-bar">
-        <form onSubmit={handleSubmit} className="SearchForm">
+        <form className="SearchForm">
           <input
             type="text"
             placeholder="Search businesses..."

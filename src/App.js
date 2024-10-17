@@ -52,11 +52,11 @@ function App() {
     },
   ];
 
-  const onSearchChange = ({ event }) => {
-    const { value } = target;
-    onChange={(e) => onSearchChange(e.target.value)}
-  
-  };
+  // const onSearchChange = ({ event }) => {
+  //   const { value } = target;
+  //   onChange={(e) => onSearchChange(e.target.value)}
+
+  // };
   const filteredBusinesses = businesses.filter((business) =>
     business.name.toLowerCase().includes(searchTerm.toLowerCase())
   );

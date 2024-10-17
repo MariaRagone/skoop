@@ -10,8 +10,8 @@ const sortByOptions = {
 const SearchBar = () => {
   const renderSortByOptions = () => {
     return Object.keys(sortByOptions).map((sortByOption) => {
-      let sortByOptionValue = sortByOptions[sortByOption];
-      return <li key={sortByOptionValue}>{sortByOption}</li>;
+      // let sortByOptionValue = sortByOptions[sortByOption];
+      return <li key={sortByOptions}>{sortByOption}</li>;
     });
   };
 

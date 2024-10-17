@@ -22,7 +22,7 @@ const businesses = [business, business, business, business, business, business];
 const App = () => {
   return (
     <div className={styles.App}>
-      <h1>ravenous</h1>
+      <h1>skoop</h1>
       <SearchBar />
       <BusinessList businesses={businesses} />
     </div>
