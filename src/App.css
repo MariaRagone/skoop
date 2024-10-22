@@ -57,6 +57,7 @@
   }
 
   .search-bar input {
+    margin: 10px;
     font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
     height: 35px; 
     width: 300px;
@@ -67,6 +68,25 @@
     ;
   }
 
+  .search-bar label {
+    color: white;
+    font-size: 20px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+  .search-bar button {
+    color: white;
+    background-color: rgb(164, 128, 75);
+    margin: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 5px;
+    border-color:  rgb(164, 128, 75);
+    font-size: 20px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+  
 .business-list {
   display: flex;
   justify-content: space-between;
