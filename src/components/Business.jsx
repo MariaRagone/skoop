@@ -1,19 +1,5 @@
 import React from "react";
 
-// const businessDetails = [
-//   {
-//     src: "https://content.codecademy.com/courses/React/react_photo-monkeyweirdo.jpg",
-//     name: "The Big Cheese",
-//     address: "12345 Cheese Way",
-//     city: "Cheesy",
-//     state: "WI",
-//     zipcode: "48556",
-//     category: "Restaurant",
-//     rating: 2,
-//     reviewCount: 20,
-//   },
-// ];
-
 function Business({
   src,
   name,
