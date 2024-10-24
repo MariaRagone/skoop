@@ -1,9 +1,13 @@
 import React, { useState } from "react";
 
 const SearchBar = () => {
-  const [searchTerm, setSearchTerm] = useState("Burger");
+  const [searchTerm, setSearchTerm] = useState("");
   const [location, setLocation] = useState("Detroit");
-  const [sortingOption, setSortingOption] = useState("Best Match");
+  const [sorting, setSorting] = useState([
+    "Best Match",
+    "Higest Rated",
+    "Most Reviewed",
+  ]);
 
   return (
     <>

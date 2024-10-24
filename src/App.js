@@ -5,10 +5,6 @@ import Header from "./components/Header";
 import SearchBar from "./components/SearchBar";
 
 function App() {
-  const [searchTerm, setSearchTerm] = useState("");
-  const [location, setLocation] = useState("Detroit");
-  const [sorting, setSorting] = useState("");
-
   const businesses = [
     {
       src: "https://content.codecademy.com/courses/React/react_photo-monkeyweirdo.jpg",
@@ -57,20 +53,22 @@ function App() {
   //   onChange={(e) => onSearchChange(e.target.value)}
 
   // };
-  const filteredBusinesses = businesses.filter((business) =>
-    business.name.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  // const filteredBusinesses = businesses.filter((business) =>
+  //   business.name.toLowerCase().includes(searchTerm.toLowerCase())
+  // );
 
   return (
     <div className="App">
       <Header />
 
       <SearchBar
-        searchTerm={searchTerm}
-        location={setLocation}
-        onSearchChange={setSearchTerm}
+      // searchTerm={searchTerm}
+      // location={setLocation}
+      // onSearchChange={setSearchTerm}
       />
-      <BusinessList businesses={filteredBusinesses} />
+      <BusinessList
+      // businesses={filteredBusinesses}
+      />
     </div>
   );
 }
