@@ -1,24 +1,26 @@
 import React, { useState } from "react";
 
+const ratings = ["Best Match", "Higest Rated", "Most Reviewed"];
+
 const SearchBar = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [location, setLocation] = useState("Detroit");
-  const [sorting, setSorting] = useState([
-    "Best Match",
-    "Higest Rated",
-    "Most Reviewed",
-  ]);
+  const [sorting, setSorting] = useState([]);
 
   return (
     <>
       <div className="search-bar">
         <form className="SearchForm">
-          <input type="radio" id="best-match" name="best-match" />
-          <label for="best-match">Best Match</label>
-          <input type="radio" id="highest-rated" name="highest-rated" />
-          <label for="highest-rated">Highest Rated</label>
-          <input type="radio" id="most-reviewed" name="most-reviewed" />
-          <label for="most-reviewed">Most Reviewed</label>
+          {ratings.map((rating) => (
+            <button
+              className="button-rating"
+              value={rating}
+              // onClick={toggleRating}
+              key={rating}
+            >
+              {rating}
+            </button>
+          ))}
           <br></br>
           <br></br>
           <input
@@ -29,7 +31,7 @@ const SearchBar = () => {
           />
 
           <input type="text" placeholder="Where?" value={location} onChange />
-          <button>Let's Go</button>
+          <button className="button">Let's Go</button>
         </form>
       </div>
     </>
