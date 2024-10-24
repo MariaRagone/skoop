@@ -7,6 +7,12 @@ const SearchBar = () => {
   const [location, setLocation] = useState("Detroit");
   const [sorting, setSorting] = useState([]);
 
+  const toggleRating = ({ target }) => {
+    const clickedRating = target.value;
+    setSorting((prev) => {
+      return [clickedRating, ...prev];
+    });
+  };
   return (
     <>
       <div className="search-bar">
@@ -15,7 +21,7 @@ const SearchBar = () => {
             <button
               className="button-rating"
               value={rating}
-              // onClick={toggleRating}
+              onClick={toggleRating}
               key={rating}
             >
               {rating}
