@@ -5,27 +5,34 @@ const ratings = ["Best Match", "Higest Rated", "Most Reviewed"];
 const SearchBar = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [location, setLocation] = useState("Detroit");
-  const [sorting, setSorting] = useState([]);
+  const [sorting, setSorting] = useState({ appearance: "none" }, []);
 
-  const toggleRating = ({ target }) => {
-    const clickedRating = target.value;
-    setSorting((prev) => {
-      return [clickedRating, ...prev];
-    });
+  const handleSorting = () => {
+    // const clickedRating = target.value;
+    setSorting((prev) => ({
+      ...prev,
+      backgroundColor: "red",
+      color: "black",
+    }));
   };
   return (
     <>
       <div className="search-bar">
         <form className="SearchForm">
           {ratings.map((rating) => (
-            <button
-              className="button-rating"
-              value={rating}
-              onClick={toggleRating}
-              key={rating}
-            >
-              {rating}
-            </button>
+            <>
+              <input
+                style={sorting}
+                type="radio"
+                id={rating}
+                name={rating}
+                className="button-rating"
+                value={rating}
+                onClick={handleSorting}
+                key={rating}
+              />
+              <label for={rating}>{rating}</label>
+            </>
           ))}
           <br></br>
           <br></br>
