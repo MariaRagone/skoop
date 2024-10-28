@@ -5,6 +5,8 @@ import Header from "./components/Header";
 import SearchBar from "./components/SearchBar";
 
 function App() {
+  const sortingOptions = ["Best Match", "Higest Rated", "Most Reviewed"];
+
   const businesses = [
     {
       src: "https://content.codecademy.com/courses/React/react_photo-monkeyweirdo.jpg",
@@ -47,7 +49,13 @@ function App() {
       reviewCount: 60,
     },
   ];
+  const [searchTerm, setSearchTerm] = useState("");
+  const [location, setLocation] = useState("Detroit");
+  const [sorting, setSorting] = useState({ appearance: "none" }, []);
 
+  const onSelectSortingHandler = (sortingSelection) => {
+    setSorting(sortingOptions[sortingSelection]);
+  };
   // const onSearchChange = ({ event }) => {
   //   const { value } = target;
   //   onChange={(e) => onSearchChange(e.target.value)}
@@ -62,9 +70,10 @@ function App() {
       <Header />
 
       <SearchBar
-      // searchTerm={searchTerm}
-      // location={setLocation}
-      // onSearchChange={setSearchTerm}
+        onSelectSortingOption={onSelectSortingHandler}
+        // searchTerm={searchTerm}
+        // location={setLocation}
+        // onSearchChange={setSearchTerm}
       />
       <BusinessList
       // businesses={filteredBusinesses}
