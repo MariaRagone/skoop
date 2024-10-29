@@ -49,32 +49,15 @@ function App() {
       reviewCount: 60,
     },
   ];
-  const [searchTerm, setSearchTerm] = useState("");
-  const [location, setLocation] = useState("Detroit");
-  const [sorting, setSorting] = useState({ appearance: "none" }, []);
 
-  const onSelectSortingHandler = (sortingSelection) => {
-    setSorting(sortingOptions[sortingSelection]);
+  const searchBusinesses = (searchTerm, location, sortBy) => {
+    console.log(`Searching Yelp with ${searchTerm}, ${location}, ${sortBy}`);
   };
-  // const onSearchChange = ({ event }) => {
-  //   const { value } = target;
-  //   onChange={(e) => onSearchChange(e.target.value)}
-
-  // };
-  // const filteredBusinesses = businesses.filter((business) =>
-  //   business.name.toLowerCase().includes(searchTerm.toLowerCase())
-  // );
 
   return (
     <div className="App">
       <Header />
-
-      <SearchBar
-        onSelectSortingOption={onSelectSortingHandler}
-        // searchTerm={searchTerm}
-        // location={setLocation}
-        // onSearchChange={setSearchTerm}
-      />
+      <SearchBar searchBusinesses={searchBusinesses} />
       <BusinessList
       // businesses={filteredBusinesses}
       />

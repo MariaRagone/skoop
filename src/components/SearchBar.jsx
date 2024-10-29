@@ -2,11 +2,13 @@ import React, { useState } from "react";
 
 // const ratings = ["Best Match", "Higest Rated", "Most Reviewed"];
 
-function SearchBar({ onSelectSortingOption }) {
-  // const [searchTerm, setSearchTerm] = useState("");
-  // const [location, setLocation] = useState("Detroit");
-  // const [sorting, setSorting] = useState({ appearance: "none" }, []);
+function SearchBar({ onSelectSortingOption, sortingOptions, props }) {
+  const [searchText, setSearchText] = useState("");
 
+  const handleSearchTextChange = ({ target }) => {
+    const { value } = target;
+    setSearchText(value);
+  };
   // const handleSorting = ({ target }) => {
   //   const { value } = target;
   //   setSorting(value);
@@ -23,29 +25,39 @@ function SearchBar({ onSelectSortingOption }) {
     onSelectSortingOption(name);
   };
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const searchTerm = {};
+    //add the sorting option, search term, and location to the object
+    console.log("you submitted");
+  };
+
   return (
     <>
-      <div className="search-bar" onClick={handleSorting}>
-        <form className="SearchForm">
+      <div className="search-bar">
+        <form
+          className="SearchForm"
+          onSubmit={handleSubmit}
+          onClick={handleSorting}
+        >
           <input type="radio" name="best-match" value="Best-Match" /> Best Match
-          <input type="radio" name="highest-rated" value="Highest-Rated" />{" "}
+          <input type="radio" name="highest-rated" value="Highest-Rated" />
           Higest Rated
           <input type="radio" name="most-reviewed" value="Most-Reviewed" /> Most
           Reviewed
-          {/* {ratings.map((rating) => (
+          {/* {sortingOptions.map((options) => (
             <>
               <input
-                style={sorting}
+                style={options}
                 type="radio"
-                id={rating}
-                name={rating}
+                id={options}
+                name={options}
                 className="button-rating"
-                value={rating}
+                value={options}
                 onClick={handleSorting}
-                // onClick={handleSorting}
-                key={rating}
+                key={options}
               />
-              <label for={rating}>{rating}</label>
+              <label for={options}>{options}</label>
             </>
           ))} */}
           <br></br>
