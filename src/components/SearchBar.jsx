@@ -2,35 +2,31 @@ import React, { useState } from "react";
 
 // const ratings = ["Best Match", "Higest Rated", "Most Reviewed"];
 
-function SearchBar({ onSelectSortingOption, sortingOptions, props }) {
-  const [searchText, setSearchText] = useState("");
+function SearchBar({ searchBusinesses }) {
+  const [searchTerm, setSearchTerm] = useState("");
+  const [location, setLocation] = useState("Detroit");
+  const [sortBy, setSortBy] = useState("best-match");
 
-  const handleSearchTextChange = ({ target }) => {
-    const { value } = target;
-    setSearchText(value);
+  const handleSortByChange = (sortByOption) => {
+    setSortBy(sortByOption);
   };
-  // const handleSorting = ({ target }) => {
-  //   const { value } = target;
-  //   setSorting(value);
-  // setSorting((prev) => ({
-  //   ...prev,
-  //   backgroundColor: "red",
-  //   color: "black",
-  // }));
-  // };
-
-  const handleSorting = (event) => {
-    const name = event.target.value;
-    console.log(`You clicked ${name}`);
-    onSelectSortingOption(name);
+  const handleSearchTermChange = (event) => {
+    setSearchTerm(event.target.value);
+  };
+  const handleLocationChange = (event) => {
+    setLocation(event.target.value);
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const searchTerm = {};
-    //add the sorting option, search term, and location to the object
+    searchBusinesses(searchTerm, location, sortBy); //add the sorting option, search term, and location to the object
     console.log("you submitted");
   };
+
+  // const handleSearchTextChange = ({ target }) => {
+  //   const { value } = target;
+  //   setSearchText(value);
+  // };
 
   return (
     <>
