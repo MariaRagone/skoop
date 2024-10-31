@@ -1,12 +1,23 @@
 import React, { useState } from "react";
+import styles from "../App.css";
 
-const sortingOptions = ["Best Match", "Higest Rated", "Most Reviewed"];
+const sortingOptions = {
+  "Best Match": "best_match",
+  "Highest Rated": "rating",
+  "Most Reviewed": "review_count",
+};
 
 function SearchBar({ searchBusinesses }) {
   const [searchTerm, setSearchTerm] = useState("");
   const [location, setLocation] = useState("Detroit");
-  const [sortOption, setSortOption] = useState("best-match");
+  const [sortOption, setSortOption] = useState("best_match");
 
+  const getSortByClass = (sortByOption) => {
+    if (sortOption === sortByOption) {
+      return styles.active;
+    }
+    return "";
+  };
   const handleSortByChange = (sortByOption) => {
     setSortOption(sortByOption);
     console.log(`the sort option is ${sortOption}`);
@@ -26,71 +37,54 @@ function SearchBar({ searchBusinesses }) {
     console.log("you submitted");
   };
 
-  // const handleSearchTextChange = ({ target }) => {
-  //   const { value } = target;
-  //   setSearchText(value);
-  // };
-
   const getSortingOptions = () => {
-    return;
-  };
-  return (
-    <>
-      <div className="search-bar">
-        <ul onClick={handleSortByChange}>
-          <li name="best-match" value="Best-Match" onChange={sortOption} /> Best
-          Match
-          <li
-            name="highest-rated"
-            value="Highest-Rated"
-            onChange={sortOption}
-          />
-          Higest Rated
-          <li
-            name="most-reviewed"
-            value="Most-Reviewed"
-            onChange={sortOption}
-          />{" "}
-          Most Reviewed
-        </ul>
-        <form
-          className="SearchForm"
-          onSubmit={handleSubmit}
-          // onClick={handleSorting}
+    return Object.keys(sortingOptions).map((sortByOption) => {
+      let sortByOptionValue = sortingOptions[sortByOption];
+      return (
+        <li
+          id={sortByOptionValue}
+          name={sortByOptionValue}
+          className={getSortByClass()}
+          value={sortByOptionValue}
+          key={sortByOptionValue}
+          onClick={() => {
+            handleSortByChange(sortByOptionValue);
+          }}
         >
-          {sortingOptions.map((options) => (
-            <>
-              <input
-                style={options}
-                type="radio"
-                id={options}
-                name={options}
-                className="button-rating"
-                value={options}
-                onClick={handleSortByChange}
-                key={options}
-              />
-              <label for={options}>{options}</label>
-            </>
-          ))}
-          <br></br>
-          <br></br>
-          <input
-            type="text"
-            placeholder="Search businesses..."
-            onChange={handleSearchTermChange}
-          />
-          <input
-            type="text"
-            placeholder="Where?"
-            onChange={handleLocationChange}
-          />
-          <button type="submit" className="button">
-            Let's Go
-          </button>
-        </form>
+          {" "}
+          {sortByOption}
+        </li>
+      );
+    });
+  };
+
+  return (
+    <div className={"search-bar"}>
+      <div className={styles.SearchBarSortOptions}>
+        <ul> {getSortingOptions()}</ul>
       </div>
-    </>
+      <form
+        className="SearchForm"
+        onSubmit={handleSubmit}
+        // onClick={handleSorting}
+      >
+        <br></br>
+        <br></br>
+        <input
+          type="text"
+          placeholder="Search businesses..."
+          onChange={handleSearchTermChange}
+        />
+        <input
+          type="text"
+          placeholder="Where?"
+          onChange={handleLocationChange}
+        />
+        <button type="submit" className="button">
+          Let's Go
+        </button>
+      </form>
+    </div>
   );
 }
 export default SearchBar;

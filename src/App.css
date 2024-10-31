@@ -73,19 +73,7 @@
     font-size: 20px;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   }
-  .search-bar button rating {
-    color: white;
-    background-color: none;
-    margin: 10px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
-    border-radius: 5px;
-    border-color:  rgb(164, 128, 75);
-    font-size: 20px;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  }
+
   .search-bar button {
     color: white;
     background-color: rgb(164, 128, 75);
@@ -99,7 +87,38 @@
     font-size: 20px;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   }
-  
+
+  .search-bar ul {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2.22rem;
+    color: #ffffff;
+
+  }
+
+  .search-bar li {
+    cursor: pointer;
+    width: 4.33rem;
+    border-bottom: 1px solid #fff;
+    padding: 0 2.58rem 0.33rem 2.58rem;
+    line-height: 1.13;
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.83rem;
+    transition: color 0.25s;
+    list-style: none;
+  }
+
+  .search-bar li:hover {
+    color: #d4cfcf;
+  }
+
+  .search-bar li.active,
+  .search-bar li.active:hover {
+  border-bottom: 1px solid #f0c36c;
+  color: #f0c36c;
+}
 .business-list {
   display: flex;
   justify-content: space-between;
