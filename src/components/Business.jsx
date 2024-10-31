@@ -1,30 +1,21 @@
 import React from "react";
 
-function Business({
-  src,
-  name,
-  address,
-  city,
-  state,
-  zipcode,
-  category,
-  rating,
-  reviewCount,
-}) {
+//bring in business array from app.js
+const Business = ({ business }) => {
   return (
     <div className="business-card">
-      <h2>{name}</h2>
-      <img src={src} alt={name} />
-      <p>{address}</p>
+      <h2>{business.name}</h2>
+      <img src={business.src} alt={business.name} />
+      <p>{business.address}</p>
       <p>
-        {city}, {state} {zipcode}
+        {business.city}, {business.state} {business.zipcode}
       </p>
-      <span>{category}</span>
-      <span>Rating: {rating}</span>
+      <span>{business.category}</span>
+      <span>Rating: {business.rating}</span>
 
-      <p># Reviews: {reviewCount}</p>
+      <p># Reviews: {business.reviewCount}</p>
     </div>
   );
-}
+};
 
 export default Business;

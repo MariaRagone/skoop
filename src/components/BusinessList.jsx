@@ -18,6 +18,9 @@ function BusinessList(props) {
           reviewCount={business.reviewCount}
         />
       ))} */}
+      {props.businesses.map((business) => {
+        return <Business business={business} key={business.name} />;
+      })}
     </div>
   );
 }

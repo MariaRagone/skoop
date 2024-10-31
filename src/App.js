@@ -5,8 +5,6 @@ import Header from "./components/Header";
 import SearchBar from "./components/SearchBar";
 
 function App() {
-  const sortingOptions = ["Best Match", "Higest Rated", "Most Reviewed"];
-
   const businesses = [
     {
       src: "https://content.codecademy.com/courses/React/react_photo-monkeyweirdo.jpg",
@@ -58,9 +56,7 @@ function App() {
     <div className="App">
       <Header />
       <SearchBar searchBusinesses={searchBusinesses} />
-      <BusinessList
-      // businesses={filteredBusinesses}
-      />
+      <BusinessList businesses={businesses} />
     </div>
   );
 }
