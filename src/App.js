@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import BusinessList from "./components/BusinessList";
 import "./App.css";
 import Header from "./components/Header";
@@ -49,6 +48,7 @@ function App() {
   ];
 
   const searchBusinesses = (searchTerm, location, sortBy) => {
+    alert(`Searching Yelp with ${searchTerm}, ${location}, ${sortBy}`);
     console.log(`Searching Yelp with ${searchTerm}, ${location}, ${sortBy}`);
   };
 

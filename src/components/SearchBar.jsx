@@ -33,8 +33,7 @@ function SearchBar({ searchBusinesses }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    searchBusinesses(searchTerm, location, sortOption); //add the sorting option, search term, and location to the object
-    console.log("you submitted");
+    searchBusinesses(searchTerm, location, sortOption);
   };
 
   const getSortingOptions = () => {
@@ -44,14 +43,13 @@ function SearchBar({ searchBusinesses }) {
         <li
           id={sortByOptionValue}
           name={sortByOptionValue}
-          className={getSortByClass()}
+          className={getSortByClass(sortByOptionValue)}
           value={sortByOptionValue}
           key={sortByOptionValue}
           onClick={() => {
             handleSortByChange(sortByOptionValue);
           }}
         >
-          {" "}
           {sortByOption}
         </li>
       );
@@ -63,11 +61,7 @@ function SearchBar({ searchBusinesses }) {
       <div className={styles.SearchBarSortOptions}>
         <ul> {getSortingOptions()}</ul>
       </div>
-      <form
-        className="SearchForm"
-        onSubmit={handleSubmit}
-        // onClick={handleSorting}
-      >
+      <form className="SearchForm" onSubmit={handleSubmit}>
         <br></br>
         <br></br>
         <input
