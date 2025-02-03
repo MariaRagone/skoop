@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "../App.css";
+import "./SearchBar.css";
 
 const sortingOptions = {
   "Best Match": "best_match",
@@ -14,7 +14,8 @@ function SearchBar({ searchBusinesses }) {
 
   const getSortByClass = (sortByOption) => {
     if (sortOption === sortByOption) {
-      return styles.active;
+      return "";
+      // return styles.active;
     }
     return "";
   };
@@ -58,7 +59,8 @@ function SearchBar({ searchBusinesses }) {
 
   return (
     <div className={"search-bar"}>
-      <div className={styles.SearchBarSortOptions}>
+      <div>
+        {/* <div className={styles.SearchBarSortOptions}> */}
         <ul> {getSortingOptions()}</ul>
       </div>
       <form className="SearchForm" onSubmit={handleSubmit}>

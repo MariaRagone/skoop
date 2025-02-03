@@ -1,4 +1,5 @@
 import React from "react";
+import "./Business.css";
 
 //bring in business array from app.js
 const Business = ({ business }) => {
