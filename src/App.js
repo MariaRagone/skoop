@@ -2,6 +2,7 @@ import BusinessList from "./components/BusinessList/BusinessList";
 import "./App.css";
 import Header from "./components/Header/Header";
 import SearchBar from "./components/SearchBar/SearchBar";
+import BusinessPage from "./components/BusinessPage/BusinessPage";
 
 function App() {
   const businesses = [
@@ -52,6 +53,7 @@ function App() {
       <Header />
       <SearchBar />
       <BusinessList businesses={businesses} />
+      {/* <BusinessPage /> */}
     </div>
   );
 }

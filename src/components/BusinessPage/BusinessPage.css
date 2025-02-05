@@ -1,9 +1,9 @@
-.business-card {
+.business-page {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     background-color: #ffffff;
-    width: 200px; /* Width of each card */
+    width: 500px; /* Width of each card */
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     padding: 16px;
@@ -11,24 +11,19 @@
     transition: transform 0.2s, box-shadow 0.2s;
   }
   
-  .business-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-  }
-  
-  .business-card img {
-    width: 200px;
+  .business-page img {
+    width: 300px;
     border-radius: 5px;
     height: auto;
   }
   
-  .business-card h2 {
+  .business-page h2 {
     font-size: 1.5rem;
     margin: 8px 0;
     color: #333;
   }
   
-  .business-card p {
+  .business-page p {
     margin: 4px 0;
     color: #666;
   }

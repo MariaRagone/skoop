@@ -4,7 +4,16 @@ import "./BusinessCard.css";
 //bring in business array from app.js
 const Business = ({ business }) => {
   return (
-    <div className="business-card">
+    <div
+      className="business-card"
+      onClick={() => {
+        alert(
+          `
+        Open ${business.name}!
+      `
+        );
+      }}
+    >
       <h2>{business.name}</h2>
       <img src={business.src} alt={business.name} />
       <p>{business.address}</p>
