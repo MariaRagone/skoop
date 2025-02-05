@@ -1,16 +1,20 @@
 import React from "react";
 const sortingOptions = ["Best Match", "Highest Rated", "Most Reviewed"];
 
-const SortingOption = () => {
+const SortingOption = ({ setSelectedOption }) => {
   return (
     <ul>
-      {sortingOptions.map((value) => (
-        <li key={value} onClick={() => {}}>
-          {value}
+      {sortingOptions.map((option) => (
+        <li
+          key={option}
+          onClick={() => {
+            setSelectedOption(option);
+          }}
+        >
+          {option}
         </li>
       ))}
     </ul>
   );
-  // return <ul> {sortingOptions.map(mapper)}</ul>;
 };
 export default SortingOption;
