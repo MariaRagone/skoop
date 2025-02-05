@@ -47,15 +47,10 @@ function App() {
     },
   ];
 
-  const searchBusinesses = (searchTerm, location, sortBy) => {
-    alert(`Searching Yelp with ${searchTerm}, ${location}, ${sortBy}`);
-    console.log(`Searching Yelp with ${searchTerm}, ${location}, ${sortBy}`);
-  };
-
   return (
     <div className="App">
       <Header />
-      <SearchBar searchBusinesses={searchBusinesses} />
+      <SearchBar />
       <BusinessList businesses={businesses} />
     </div>
   );

@@ -1,5 +1,5 @@
 import React from "react";
-import "./Business.css";
+import "./BusinessCard.css";
 
 //bring in business array from app.js
 const Business = ({ business }) => {

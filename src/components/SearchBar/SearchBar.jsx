@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import "./SearchBar.css";
 import SortingOption from "./SortingOption";
-function SearchBar({ searchBusinesses }) {
-  const [searchBusiness, setSearchBusiness] = useState("");
-  const [location, setLocation] = useState("");
-  const [selectedOption, setSelectedOption] = useState("");
 
+function SearchBar({ searchBusinesses }) {
+  const [searchTerm, setSearchTerm] = useState("Taco Empire");
+  const [location, setLocation] = useState("Detroit");
+  const [selectedOption, setSelectedOption] = useState("");
   return (
     <div className="search-bar">
       <div>
@@ -16,9 +16,9 @@ function SearchBar({ searchBusinesses }) {
         <br></br>
         <input
           onChange={(e) => {
-            setSearchBusiness(e.target.value);
+            setSearchTerm(e.target.value);
           }}
-          value={searchBusiness}
+          value={searchTerm}
           type="text"
           placeholder="Search businesses..."
         />
@@ -26,18 +26,22 @@ function SearchBar({ searchBusinesses }) {
           onChange={(e) => {
             setLocation(e.target.value);
           }}
+          value={location}
           type="text"
           placeholder="Where?"
         />
         <button
+          onClick={() => {
+            alert(
+              `
+              Business: ${searchTerm}
+              Location: ${location}
+              Sorting Option: ${selectedOption}
+            `
+            );
+          }}
           type="submit"
           className="button"
-          onClick={() => {
-            alert(`
-              Sorting Option: ${selectedOption}
-              Business: ${searchBusiness}
-              Location: ${location}`);
-          }}
         >
           Let's Go
         </button>

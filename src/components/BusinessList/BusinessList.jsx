@@ -1,5 +1,5 @@
 import React from "react";
-import Business from "../Business/Business";
+import Business from "../BusinessCard/BusinessCard";
 import "./BusinessList.css";
 
 function BusinessList({ businesses }) {
