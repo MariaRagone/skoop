@@ -1,0 +1,21 @@
+.outdoor-seating {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2.22rem;
+    color: #ffffff;
+    font-size: 1.25rem;
+    cursor: pointer;
+    border-bottom: 3px solid #fff;
+
+  }
+
+  .outdoor-seating-item:hover {
+    color:#a47e32;
+  }
+
+.outdoor-seating-active,
+.outdoor-seating-active:hover {
+border-bottom: 1px solid #a47e32;
+color: #a47e32;
+}

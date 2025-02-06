@@ -3,20 +3,24 @@ import "./SortingOption.css";
 
 const sortingOptions = ["Best Match", "Highest Rated", "Most Reviewed"];
 
-const SortingOption = ({ setSelectedOption }) => {
+const SortingOption = ({ selectedOption, setSelectedOption }) => {
   return (
     <ul className="sorting-options">
-      {sortingOptions.map((option) => (
-        <li
-          className="sorting-options-item"
-          key={option}
-          onClick={() => {
-            setSelectedOption(option);
-          }}
-        >
-          {option}
-        </li>
-      ))}
+      {sortingOptions.map((option) => {
+        const activeClassname =
+          selectedOption === option ? "sorting-options-active" : "";
+        return (
+          <li
+            className={`sorting-options-item ${activeClassname}`}
+            key={option}
+            onClick={() => {
+              setSelectedOption(option);
+            }}
+          >
+            {option}
+          </li>
+        );
+      })}
     </ul>
   );
 };

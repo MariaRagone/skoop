@@ -1,15 +1,22 @@
 import React, { useState } from "react";
 import "./SearchBar.css";
 import SortingOption from "./SortingOption";
+import OutdoorSeating from "./OutdoorSeating";
 
 function SearchBar({ searchBusinesses }) {
   const [searchTerm, setSearchTerm] = useState("Taco Empire");
   const [location, setLocation] = useState("Detroit");
   const [selectedOption, setSelectedOption] = useState("");
+  const [seating, setSeating] = useState("");
+
   return (
     <div className="search-bar">
       <div>
-        <SortingOption setSelectedOption={setSelectedOption} />
+        <OutdoorSeating />
+        <SortingOption
+          selectedOption={selectedOption}
+          setSelectedOption={setSelectedOption}
+        />
       </div>
       <form className="SearchForm">
         <br></br>
