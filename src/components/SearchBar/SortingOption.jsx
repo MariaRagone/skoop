@@ -7,11 +7,11 @@ const SortingOption = ({ selectedOption, setSelectedOption }) => {
   return (
     <ul className="sorting-options">
       {sortingOptions.map((option) => {
-        const activeClassname =
+        const activeClassName =
           selectedOption === option ? "sorting-options-active" : "";
         return (
           <li
-            className={`sorting-options-item ${activeClassname}`}
+            className={`sorting-options-item ${activeClassName}`}
             key={option}
             onClick={() => {
               setSelectedOption(option);

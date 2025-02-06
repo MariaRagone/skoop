@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./SearchBar.css";
 import SortingOption from "./SortingOption";
-import OutdoorSeating from "./OutdoorSeating";
+import Seating from "./Seating";
 
 function SearchBar({ searchBusinesses }) {
   const [searchTerm, setSearchTerm] = useState("Taco Empire");
@@ -12,7 +12,7 @@ function SearchBar({ searchBusinesses }) {
   return (
     <div className="search-bar">
       <div>
-        <OutdoorSeating />
+        <Seating seating={seating} setSeating={setSeating} />
         <SortingOption
           selectedOption={selectedOption}
           setSelectedOption={setSelectedOption}
@@ -41,6 +41,7 @@ function SearchBar({ searchBusinesses }) {
           onClick={() => {
             alert(
               `
+              Seating Option: ${seating}
               Business: ${searchTerm}
               Location: ${location}
               Sorting Option: ${selectedOption}

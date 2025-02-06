@@ -1,4 +1,4 @@
-.outdoor-seating {
+.seating {
     display: flex;
     justify-content: center;
     gap: 2rem;
@@ -14,8 +14,8 @@
     color:#a47e32;
   }
 
-.outdoor-seating-active,
-.outdoor-seating-active:hover {
+.seating-active,
+.seating-active:hover {
 border-bottom: 1px solid #a47e32;
 color: #a47e32;
 }
