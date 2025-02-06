@@ -53,7 +53,6 @@ function App() {
       <Header />
       <SearchBar />
       <BusinessList businesses={businesses} />
-      {/* <BusinessPage /> */}
     </div>
   );
 }
