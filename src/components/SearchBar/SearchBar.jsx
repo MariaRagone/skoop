@@ -3,7 +3,7 @@ import "./SearchBar.css";
 import SortingOption from "./SortingOption";
 import Seating from "./Seating";
 
-function SearchBar({ searchBusinesses }) {
+function SearchBar() {
   const [searchTerm, setSearchTerm] = useState("Taco Empire");
   const [location, setLocation] = useState("Detroit");
   const [selectedOption, setSelectedOption] = useState("");

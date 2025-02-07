@@ -12,9 +12,10 @@
   }
   
   .business-card:hover {
-    transform: translateY(-4px);
+    transform: translateY(-5px);
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
     opacity: .5;
+    cursor: pointer;
   }
   
   .business-card img {
