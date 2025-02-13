@@ -45,10 +45,10 @@ const businesses = [
   },
 ];
 
-function BusinessList() {
+function BusinessList({ listings }) {
   return (
     <div className="business-list">
-      {businesses.map((business) => {
+      {listings.map((business) => {
         return <Business business={business} key={business.name} />;
       })}
     </div>

@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import "./SearchBar.css";
-import SortingOption from "./SortingOption";
+import SortingOption, { sortingOptions } from "./SortingOption";
 import Seating from "./Seating";
+import { getBusinessListings } from "../../Yelp";
 
-function SearchBar() {
+function SearchBar({ setListings }) {
   const [searchTerm, setSearchTerm] = useState("Taco Empire");
   const [location, setLocation] = useState("Detroit");
-  const [selectedOption, setSelectedOption] = useState("");
+  const [selectedOption, setSelectedOption] = useState(sortingOptions[0]);
   const [seating, setSeating] = useState("");
 
   return (
@@ -38,17 +39,16 @@ function SearchBar() {
           placeholder="Where?"
         />
         <button
-          onClick={() => {
-            alert(
-              `
-              Seating Option: ${seating}
-              Business: ${searchTerm}
-              Location: ${location}
-              Sorting Option: ${selectedOption}
-            `
-            );
+          onClick={(e) => {
+            e.preventDefault();
+            getBusinessListings(
+              searchTerm,
+              location,
+              selectedOption.param
+            ).then((res) => {
+              setListings(res.businesses);
+            });
           }}
-          type="submit"
           className="button"
         >
           Let's Go

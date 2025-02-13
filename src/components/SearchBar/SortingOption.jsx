@@ -1,23 +1,27 @@
 import React from "react";
 import "./SortingOption.css";
 
-const sortingOptions = ["Best Match", "Highest Rated", "Most Reviewed"];
+export const sortingOptions = [
+  { name: "Best Match", param: "best_match" },
+  { name: "Highest Rated", param: "rating" },
+  { name: "Most Reviewed", param: "review_count" },
+];
 
 const SortingOption = ({ selectedOption, setSelectedOption }) => {
   return (
     <ul className="sorting-options">
       {sortingOptions.map((option) => {
         const activeClassName =
-          selectedOption === option ? "sorting-options-active" : "";
+          selectedOption.name === option.name ? "sorting-options-active" : "";
         return (
           <li
             className={`sorting-options-item ${activeClassName}`}
-            key={option}
+            key={option.name}
             onClick={() => {
               setSelectedOption(option);
             }}
           >
-            {option}
+            {option.name}
           </li>
         );
       })}

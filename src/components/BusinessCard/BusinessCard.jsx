@@ -6,24 +6,24 @@ const Business = ({ business }) => {
   return (
     <div
       className="business-card"
-      onClick={() => {
-        alert(
-          `
-        Open ${business.name}!
-      `
-        );
-      }}
+      // onClick={() => {
+      //   alert(
+      //     `
+      //   Open ${business.name}!
+      // `
+      //   );
+      // }}
     >
       <h2>{business.name}</h2>
-      <img src={business.src} alt={business.name} />
-      <p>{business.address}</p>
+      <img src={business.image_url} alt={business.name} />
+      <p>{business.location.address1}</p>
       <p>
-        {business.city}, {business.state} {business.zipcode}
+        {business.location.city}, {business.location.state}{" "}
+        {business.location.zip_code}
       </p>
-      <span>{business.category}</span>
+      <span>Category: {business.categories[0].title}</span>
       <span>Rating: {business.rating}</span>
-
-      <p># Reviews: {business.reviewCount}</p>
+      <p># Reviews: {business.review_count}</p>
     </div>
   );
 };
