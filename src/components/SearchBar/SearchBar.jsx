@@ -4,7 +4,7 @@ import SortingOption, { sortingOptions } from "./SortingOption";
 import Seating from "./Seating";
 import { getBusinessListings } from "../../Yelp";
 
-function SearchBar({ setListings }) {
+function SearchBar({ listing, setListings }) {
   const [searchTerm, setSearchTerm] = useState("Taco Empire");
   const [location, setLocation] = useState("Detroit");
   const [selectedOption, setSelectedOption] = useState(sortingOptions[0]);
@@ -41,6 +41,7 @@ function SearchBar({ setListings }) {
         <button
           onClick={(e) => {
             e.preventDefault();
+            console.log(listing);
             getBusinessListings(
               searchTerm,
               location,

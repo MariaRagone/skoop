@@ -1,10 +1,11 @@
 import React from "react";
 import "./BusinessPage.css";
 
-const BusinessPage = ({ business }) => {
+const BusinessPage = () => {
   return (
-    <div className="business-page">
-      <h2>{business.name}</h2>
+    <div>
+      <h1>New Page</h1>
+      <p>Welcome to the new page!</p>
     </div>
   );
 };
